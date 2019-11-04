@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <!-- configuration -->
+        <service id="ost_enterprise_search.configuration" class="OstFoundation\Services\ConfigurationService">
+            <factory service="ost_foundation.services.configuration_service" method="getConfig"/>
+            <argument type="string">OstEnterpriseSearch</argument>
+        </service>
+
+        <!-- service decorators -->
+        <service id="ost_enterprise_search.product_number_redirect" class="OstEnterpriseSearch\Listeners\SwagEnterpriseSearch\ProductNumberRedirect" decorates="swag_enterprise_search.redirect.product_number" public="false">
+            <argument type="service" id="ost_enterprise_search.product_number_redirect.inner"/>
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="router" />
+            <argument type="service" id="shopware_storefront.context_service" />
+        </service>
+
+    </services>
+</container>
