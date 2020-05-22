@@ -8,5 +8,24 @@
             <label><![CDATA[<b>Allgemeine Einstellungen</b>]]></label>
         </element>
 
+        <element type="button">
+            <name>synonymButton</name>
+            <label><![CDATA[<b>Synonyme Einstellungen</b>]]></label>
+        </element>
+
+        <element type="text">
+            <name>synonymAttribute</name>
+            <label>Attribut</label>
+            <value>attr24</value>
+            <description><![CDATA[...]]></description>
+        </element>
+
+        <element type="text">
+            <name>synonymFile</name>
+            <label>Datei</label>
+            <value>files/synonyme/synonyme.csv</value>
+            <description><![CDATA[...]]></description>
+        </element>
+
     </elements>
 </config>

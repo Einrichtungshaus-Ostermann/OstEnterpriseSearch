@@ -18,5 +18,13 @@
             <argument type="service" id="shopware_storefront.context_service" />
         </service>
 
+        <!-- commands -->
+        <service id="ost_enterprise_search.commands.import_synonyms_command" class="OstEnterpriseSearch\Commands\ImportSynonymsCommand">
+            <tag name="console.command" command="ost-enterprise-search:import-synonyms"/>
+            <argument type="service" id="db"/>
+            <argument type="service" id="models"/>
+            <argument type="service" id="ost_enterprise_search.configuration"/>
+        </service>
+
     </services>
 </container>
